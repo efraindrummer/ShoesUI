@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:shoes_ui/Animation/FadeAnimation.dart';
 import 'Pages/Shoes.dart';
 import 'components/subtitleText.dart';
  
@@ -52,7 +53,7 @@ class Home extends StatelessWidget {
                 child: ListView(
                   scrollDirection: Axis.horizontal,
                   children: <Widget>[
-                    AspectRatio(
+                    FadeAnimation(1, AspectRatio(
                       aspectRatio: 2 / 1,
                       child: Container(
                         margin: EdgeInsets.only(right: 5),
@@ -64,18 +65,18 @@ class Home extends StatelessWidget {
                           child: Text("All", style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold)),
                         ),
                       ),
-                    ),
-                    SubTitleText(title: "Snakers"),
-                    SubTitleText(title: "Football"),
-                    SubTitleText(title: "Soccer"),
-                    SubTitleText(title: "Golf"),
+                    )),
+                    FadeAnimation(1.1,SubTitleText(title: "Snakers")),
+                    FadeAnimation(1.2,SubTitleText(title: "Football")),
+                    FadeAnimation(1.3,SubTitleText(title: "Soccer")),
+                    FadeAnimation(1.4,SubTitleText(title: "Golf")),
                   ],
                 ),
               ),
               SizedBox(height: 20),
-              makeItem(image: 'assets/images/zapato-rojo.jpg', tag: 'red', context: context),
-              makeItem(image: 'assets/images/zapato-verde.jpg', tag: 'green', context: context),
-              makeItem(image: 'assets/images/zapato-black.jpg', tag: 'black', context: context),
+              FadeAnimation(1.5, makeItem(image: 'assets/images/zapato-rojo.jpg', tag: 'red', context: context)),
+              FadeAnimation(1.6, makeItem(image: 'assets/images/zapato-verde.jpg', tag: 'green', context: context)),
+              FadeAnimation(1.7, makeItem(image: 'assets/images/zapato-black.jpg', tag: 'black', context: context)),
             ],
           ),
         ),
@@ -120,9 +121,9 @@ class Home extends StatelessWidget {
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: <Widget>[
-                        Text("Sneakers", style: TextStyle(color: Colors.white, fontSize: 30, fontWeight: FontWeight.bold)),
+                        FadeAnimation(1, Text("Sneakers", style: TextStyle(color: Colors.white, fontSize: 30, fontWeight: FontWeight.bold))),
                         SizedBox(height: 10),
-                        Text("Nike", style: TextStyle(color: Colors.white, fontSize: 24)),
+                        FadeAnimation(1.1, Text("Nike", style: TextStyle(color: Colors.white, fontSize: 24))),
                       ],
                     ),
                   ),
@@ -139,7 +140,7 @@ class Home extends StatelessWidget {
                   )
                 ],
               ),
-              Text("100\$", style: TextStyle(color: Colors.white, fontSize: 30, fontWeight: FontWeight.bold)),
+              FadeAnimation(1.2, Text("100\$", style: TextStyle(color: Colors.white, fontSize: 30, fontWeight: FontWeight.bold))),
             ],
           ),
         ),
